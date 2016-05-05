@@ -24,14 +24,14 @@ RUN useradd -M -s /bin/false --uid 1000 minecraft \
 EXPOSE 25565
 EXPOSE 25575
 
-COPY ./start.sh /start
-COPY ./start-minecraft.sh /start-minecraft
+COPY start.sh /start
+COPY start-minecraft.sh /start-minecraft
 
 VOLUME ["/data"]
 VOLUME ["/mods"]
 VOLUME ["/config"]
 VOLUME ["/plugins"]
-COPY ./server.properties /tmp/server.properties
+COPY server.properties /tmp/server.properties
 WORKDIR /data
 
 CMD [ "/start" ]
